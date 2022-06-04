@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include("conecta.php");
 $cliente_cpf = $_GET['cliente_cpf'];
 $sql = "DELETE FROM CLIENTE WHERE CLIENTE_CPF=:cliente_cpf";
 $query = $dbConn->prepare($sql);
