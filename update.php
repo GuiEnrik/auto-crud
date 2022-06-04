@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include("conecta.php");
 
 $cliente_cpf = $_POST['in_ClienteCpf'];
 $nome = $_POST['in_Nome'];
