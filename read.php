@@ -9,7 +9,7 @@
     </tr>
 
     <?php
-    include_once("config.php");
+    include_once("conecta.php");
 
     $result = $dbConn->query("SELECT * FROM CLIENTE ORDER BY NOME DESC");
     while($row = $result->fetch(PDO::FETCH_ASSOC)) { 
