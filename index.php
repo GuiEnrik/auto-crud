@@ -1,5 +1,5 @@
 <?php
-    include_once("config.php");
+    include_once("conecta.php");
 
     if(isset($_GET["cliente_cpf"])){
         $result = $dbConn->query("SELECT * FROM CLIENTE WHERE CLIENTE_CPF = ".$_GET["cliente_cpf"]);
