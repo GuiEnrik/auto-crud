@@ -11,7 +11,7 @@
     <?php
     include_once("conecta.php");
 
-    $result = $dbConn->query("SELECT * FROM CLIENTE ORDER BY NOME DESC");
+    $result = $dbConn->query("SELECT * FROM CLIENTE ORDER BY NOME");
     while($row = $result->fetch(PDO::FETCH_ASSOC)) { 
         echo "<tr>";
         echo "<td>".$row['CLIENTE_CPF']."</td>";
