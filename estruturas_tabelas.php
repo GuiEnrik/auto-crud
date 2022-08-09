@@ -10,6 +10,8 @@ if (!mysql_connect($mysql_host, $mysql_user, $mysql_password)) {
     exit;
 }
 
+include_once("conecta.php");
+
 echo "<pre>\n";
 
 $sql_tabelas = "SHOW TABLES FROM $mysql_database";
