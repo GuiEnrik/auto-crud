@@ -12,31 +12,31 @@ if (!mysql_connect($mysql_host, $mysql_user, $mysql_password)) {
 
 echo "<pre>\n";
 
-$sql = "SHOW TABLES FROM $mysql_database";
-$result = mysql_query($sql);
+$sql_tabelas = "SHOW TABLES FROM $mysql_database";
+$tabelas = mysql_query($sql_tabelas);
 
-if (!$result) {
+if (!$tabelas) {
     echo "Erro, não foi possivel listar as tabelas do banco\n";
     echo "Erro MySQL: " . mysql_error();
     exit;
 }
 
-while ($row = mysql_fetch_row($result)) {
-    echo "TABELA: {$row[0]}\n";
+while ($row_tabelas = mysql_fetch_row($tabelas)) {
+    echo "TABELA: {$row_tabelas[0]}\n";
 
-    $sql2 = "DESCRIBE ". $row[0];
+    $sql_colunas = "DESCRIBE ". $row_tabelas[0];
 
     mysql_query("USE ".$mysql_database);
 
-    $result2 = mysql_query($sql2);
+    $colunas = mysql_query($sql_colunas);
 
-    if (!$result2) {
+    if (!$colunas) {
         echo "Erro, não foi possivel listar as colunas da tabela\n";
         echo "Erro MySQL: " . mysql_error();
         exit;
     }
-    while($row2 = mysql_fetch_array($result2)) {
-        echo "{$row2['Field']} - {$row2['Type']}\n";
+    while($row_colunas = mysql_fetch_array($colunas)) {
+        echo "{$row_colunas['Field']} - {$row_colunas['Type']}\n";
     }
 
     echo "\n";
