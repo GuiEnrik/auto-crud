@@ -1,9 +1,17 @@
 <?php
-include_once("conecta.php");
+$mysql_host = "";
+$mysql_user = "";
+$mysql_password = "";
+$mysql_database = "";
+
+if (!mysql_connect($mysql_host, $mysql_user, $mysql_password)) {
+    echo "Não foi possível conectar ao mysql";
+    exit;
+}
 
 echo "<pre>\n";
 
-$sql_tabelas = "SHOW TABLES FROM $dbName";
+$sql_tabelas = "SHOW TABLES FROM $mysql_database";
 $tabelas = mysql_query($sql_tabelas);
 
 if (!$tabelas) {
@@ -17,7 +25,7 @@ while ($row_tabelas = mysql_fetch_row($tabelas)) {
 
     $sql_colunas = "DESCRIBE ". $row_tabelas[0];
 
-    mysql_query("USE ".$dbName);
+    mysql_query("USE ".$mysql_database);
 
     $colunas = mysql_query($sql_colunas);
 
