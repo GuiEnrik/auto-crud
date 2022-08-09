@@ -1,9 +1,9 @@
 <?php
 
-$mysql_host = "sql102.epizy.com";
-$mysql_user = "epiz_31738243";
-$mysql_password = "hLyqBJscqLmH";
-$mysql_database = "epiz_31738243_meubanco2";
+$mysql_host = "";
+$mysql_user = "";
+$mysql_password = "";
+$mysql_database = "";
 
 if (!mysql_connect($mysql_host, $mysql_user, $mysql_password)) {
     echo "Não foi possível conectar ao mysql";
