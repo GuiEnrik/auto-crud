@@ -10,7 +10,7 @@ if (!mysql_connect($mysql_host, $mysql_user, $mysql_password)) {
     exit;
 }
 
-echo "<pre>";
+echo "<pre>\n";
 
 $sql = "SHOW TABLES FROM $mysql_database";
 $result = mysql_query($sql);
@@ -43,7 +43,7 @@ while ($row = mysql_fetch_row($result)) {
 
 }
 
-echo "</pre>";
+echo "</pre>\n";
 
 mysql_free_result($result);
 ?>
